@@ -1,0 +1,6 @@
+# put this row in $DSH_HOME/cordis.patch.yml (or your agent preset's agent.cordis.yml)
+# to mount the plugin. `config` is optional and accepts the plugin's config schema.
+
+message-card:
+  package: dsh-message-card
+  # config: {}
