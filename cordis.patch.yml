@@ -1,0 +1,6 @@
+# dsh-message-card bundle patch: host tool row + browser client.
+# The loader resolves `name` to this package (`dsh plugin add dsh-message-card`),
+# whose `dsh.client` declaration makes dsh-client-modules serve lib/client.js.
+- insert:
+    - id: dsh-message-card
+      name: dsh-message-card

@@ -82,11 +82,7 @@ function MeetingRoomCard(props: { data?: Record<string, any> }) {
 
   const attendees: string[] = Array.isArray(data.attendees) && data.attendees.length ? data.attendees : DEFAULT_ATTENDEES
   const toggle = (p: string) => setPeople((prev) => (prev.includes(p) ? prev.filter((x) => x !== p) : prev.concat(p)))
-  const submit = async () => {
-    const payload = { type: 'meeting_room', date, start, end, room, people }
-    try {
-      await host.call('mc_submit', payload)
-    } catch {}
+  const submit = () => {
     setDone(true)
   }
 
@@ -216,6 +212,3 @@ export const apply = (ctx: Context) => {
     )
   )
 }
-
-// Reference the package-private host bridge (injected by the client runner runtime).
-declare const host: { call(method: string, args?: unknown): Promise<unknown> }

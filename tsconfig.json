@@ -7,11 +7,8 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "declaration": true,
-    "declarationDir": "lib/types",
-    "outDir": "lib",
-    "rootDir": "src",
-    "lib": ["ES2022", "DOM"]
+    "lib": ["ES2022", "DOM"],
+    "types": ["react"]
   },
-  "include": ["src"]
+  "include": ["src", "tsdown.config.ts"]
 }

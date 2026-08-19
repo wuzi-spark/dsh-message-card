@@ -1,6 +1,12 @@
 import type { Context } from '@deepseek-ai/cordis'
 import { defineTool } from '@deepseek-ai/dsh-tools'
 
+declare module '@deepseek-ai/cordis' {
+  interface Context {
+    tools: { register(definition: unknown): () => void }
+  }
+}
+
 export const name = 'message-card'
 
 /** The single model-facing tool. The model calls it when the user wants a supported card. */
@@ -49,7 +55,4 @@ export const apply = (ctx: Context) => {
 
   const disposer = ctx.tools.register(tool)
   ctx.effect(() => disposer)
-
-  // Client -> Host: record a card submission as small owned data.
-  ctx.handle('mc_submit', async (payload: unknown) => ({ ok: true, received: payload }))
 }
