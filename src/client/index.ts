@@ -113,7 +113,7 @@ function MeetingRoomCard(props: { data?: Record<string, any> }) {
             attendees.map((p) => React.createElement('button', { key: p, className: 'mc-chip' + (people.includes(p) ? ' mc-chip--on' : ''), onClick: () => toggle(p) }, p)))),
           React.createElement('div', { className: 'mc-actions' },
             React.createElement('button', { className: 'mc-btn mc-btn--primary', onClick: submit }, '确认预定'),
-            React.createElement('button', { className: 'mc-btn mc-btn--ghost', onClick: () => { setDate(''); setStart('09:00'); setEnd('10:00'); setRoom(''); setPeople([]) } }, '重置')))
+            React.createElement('button', { className: 'mc-btn mc-btn--ghost', onClick: () => { setDate(''); setStart('09:00'); setEnd('10:00'); setRoom(''); setPeople([]) } }, '重置'))))
 }
 
 function StylePicker() {
